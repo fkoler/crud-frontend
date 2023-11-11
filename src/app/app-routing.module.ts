@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { TaskScreenComponent } from './task-screen/task-screen.component';
+
+const routes: Routes = [
+  { path: '', component: TaskScreenComponent },
+  { path: 'task-lists/:taskListId', component: TaskScreenComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
