@@ -30,10 +30,14 @@ export class ApiConfigService {
   }
 
   patch(url: string, data: Object) {
-    return this.httpClient.patch(`${this.API_URL}/${url}`, data);
+    return this.httpClient.patch<TaskModel>(`${this.API_URL}/${url}`, data);
   }
 
-  delete(url: string) {
-    return this.httpClient.delete(`${this.API_URL}/${url}`);
+  deleteTask(url: string) {
+    return this.httpClient.delete<TaskModel>(`${this.API_URL}/${url}`);
+  }
+
+  deleteATaskList(url: string) {
+    return this.httpClient.delete<TaskListModel>(`${this.API_URL}/${url}`);
   }
 }

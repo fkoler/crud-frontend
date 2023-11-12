@@ -1,8 +1,8 @@
 class TaskModel {
-    _id: string | undefined;
-    title: string | undefined;
-    _taskListId: string | undefined;
-    completed: boolean | undefined;
+    _id!: string;
+    title!: string;
+    _taskListId!: string;
+    completed!: boolean;
 }
 
 export default TaskModel;
