@@ -34,15 +34,15 @@ export class TaskService {
     return this.apiConfigService.post(`tasklists/${taskListId}/tasks`, { title });
   }
 
-  deleteATaskList(taskListId: string) {
-    return this.apiConfigService.delete(`tasklists/${taskListId}`);
+  deleteATaskList(taskListId: string): Observable<TaskListModel> {
+    return this.apiConfigService.deleteATaskList(`tasklists/${taskListId}`);
   }
 
-  deleteATaskForATaskList(taskListId: string, taskId: string) {
-    return this.apiConfigService.delete(`tasklists/${taskListId}/tasks/${taskId}`);
+  deleteATaskForATaskList(taskListId: string, taskId: string): Observable<TaskModel> {
+    return this.apiConfigService.deleteTask(`tasklists/${taskListId}/tasks/${taskId}`);
   }
 
-  updateTaskStatus(taskListId: string, taskObject: TaskModel) {
+  updateTaskStatus(taskListId: string, taskObject: TaskModel): Observable<TaskModel> {
     let updateData = { 'completed': !taskObject.completed };
     return this.apiConfigService.patch(`tasklists/${taskListId}/tasks/${taskObject._id}`, updateData);
   }
