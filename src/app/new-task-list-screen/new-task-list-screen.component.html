@@ -1,1 +1,22 @@
-<p>new-task-list-screen works!</p>
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-8">
+            <div class="mb-3">
+                <label for="taskList" class="form-label">
+                    <h3>Add new Task List Title</h3>
+                </label>
+                <input #taskListInput type="text" class="form-control" id="taskList" placeholder="Enter Title">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <button [routerLink]="['/']" type="button" class="btn btn-secondary m-1">
+                Cancel
+            </button>
+            <button (click)="addNewTaskList(taskListInput.value)" type="button" class="btn btn-primary m-1">
+                Add New Task List
+            </button>
+        </div>
+    </div>
+</div>

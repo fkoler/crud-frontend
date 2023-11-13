@@ -22,7 +22,7 @@ export class ApiConfigService {
   }
 
   post(url: string, data: Object) {
-    return this.httpClient.post(`${this.API_URL}/${url}`, data);
+    return this.httpClient.post<TaskListModel>(`${this.API_URL}/${url}`, data);
   }
 
   put(url: string, data: Object) {
