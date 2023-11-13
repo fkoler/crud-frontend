@@ -1,20 +1,27 @@
 <div class="container mt-4">
-    <h2 [routerLink]="['/']" style="cursor: pointer;" class="bg-secondary p-3 text-center fw-bold">Task Manager App</h2>
+    <h2 class="bg-secondary p-3 text-center fw-bold m-0 rounded">
+        <span [routerLink]="['/']" style="cursor: pointer;">
+            Task Manager App
+        </span>
+    </h2>
 
     <div class="row">
-        <div class="col-4">
+        <div class="col-md-4 col-sm-12 mt-4">
 
             <div class="row position-relative">
                 <div class="col-6">
-                    <h3 class="float-start">Task List</h3>
+                    <h3 class="float-start m-0 pt-1">
+                        Task List
+                    </h3>
                 </div>
                 <div class="col-6">
-                    <button [routerLink]="['/new-task-list']" type="button" class="btn btn-primary float-end">New Task
-                        List</button>
+                    <button [routerLink]="['/new-task-list']" type="button" class="btn btn-primary float-end">
+                        New Task List
+                    </button>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row mt-4">
                 <div class="col-12">
 
                     <div class="list-group">
@@ -22,24 +29,28 @@
                             *ngFor="let item of taskLists"
                             class="list-group-item list-group-item-action list-group-item-dark" aria-current="true">
                             {{item.title}}
-                            <span (click)="deleteTaskList(item)" class="badge bg-danger rounded-pill">X</span>
+                            <span (click)="deleteTaskList(item)" class="badge bg-danger rounded-pill float-end">X</span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-8">
+        <div class="col-md-8 col-sm-12 mt-4">
             <div class="row">
                 <div class="col-6">
-                    <h3 class="float-start">Linked Tasks</h3>
+                    <h3 class="float-start m-0 pt-1">
+                        Linked Tasks
+                    </h3>
                 </div>
                 <div class="col-6">
-                    <button (click)="addNewTask()" type="button" class="btn btn-primary float-end">New Task</button>
+                    <button (click)="addNewTask()" type="button" class="btn btn-primary float-end">
+                        New Task
+                    </button>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row mt-4">
                 <div class="col-12">
 
                     <ul class="list-group">
@@ -47,7 +58,7 @@
                             *ngFor="let task of tasks" (click)="taskClicked(task)"
                             class="list-group-item d-flex justify-content-between align-items-center">
                             {{task.title}}
-                            <span (click)="deleteTask(task)" class="badge bg-danger rounded-pill">X</span>
+                            <span (click)="deleteTask(task)" class="badge bg-danger rounded-pill float-end">X</span>
                         </li>
                     </ul>
                 </div>
