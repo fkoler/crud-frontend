@@ -72,4 +72,13 @@ export class TaskScreenComponent implements OnInit {
         )
       });
   }
+
+  addNewTask() {
+    if (this.taskListId) {
+      this.router.navigate(['./new-task'], { relativeTo: this.activatedRoute })
+    } else {
+      alert('Please select a Task List or create a New Task List');
+      return;
+    }
+  }
 }

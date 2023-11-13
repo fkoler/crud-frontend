@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <h2 class="bg-secondary p-3 text-center fw-bold">Task Manager App</h2>
+    <h2 [routerLink]="['/']" style="cursor: pointer;" class="bg-secondary p-3 text-center fw-bold">Task Manager App</h2>
 
     <div class="row">
         <div class="col-4">
@@ -9,7 +9,8 @@
                     <h3 class="float-start">Task List</h3>
                 </div>
                 <div class="col-6">
-                    <button type="button" class="btn btn-primary float-end">New Task List</button>
+                    <button [routerLink]="['/new-task-list']" type="button" class="btn btn-primary float-end">New Task
+                        List</button>
                 </div>
             </div>
 
@@ -34,7 +35,7 @@
                     <h3 class="float-start">Linked Tasks</h3>
                 </div>
                 <div class="col-6">
-                    <button type="button" class="btn btn-primary float-end">New Task</button>
+                    <button (click)="addNewTask()" type="button" class="btn btn-primary float-end">New Task</button>
                 </div>
             </div>
 
