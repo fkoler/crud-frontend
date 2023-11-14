@@ -11,7 +11,7 @@
             <div class="row position-relative">
                 <div class="col-6">
                     <h3 class="float-start m-0 pt-1">
-                        Task List
+                        Lists
                     </h3>
                 </div>
                 <div class="col-6">
@@ -29,7 +29,9 @@
                             *ngFor="let item of taskLists"
                             class="list-group-item list-group-item-action list-group-item-dark" aria-current="true">
                             {{item.title}}
-                            <span (click)="deleteTaskList(item)" class="badge bg-danger rounded-pill float-end">X</span>
+                            <span (click)="deleteTaskList(item)" class="float-end">
+                                <i class="fa-solid fa-trash fa-sm" style="color: #3cb371;"></i>
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -40,7 +42,7 @@
             <div class="row">
                 <div class="col-6">
                     <h3 class="float-start m-0 pt-1">
-                        Linked Tasks
+                        Tasks
                     </h3>
                 </div>
                 <div class="col-6">
@@ -58,7 +60,9 @@
                             *ngFor="let task of tasks" (click)="taskClicked(task)"
                             class="list-group-item d-flex justify-content-between align-items-center">
                             {{task.title}}
-                            <span (click)="deleteTask(task)" class="badge bg-danger rounded-pill float-end">X</span>
+                            <span (click)="deleteTask(task)" class="float-end">
+                                <i class="fa-solid fa-trash fa-sm" style="color: #3cb371;"></i>
+                            </span>
                         </li>
                     </ul>
                 </div>
