@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { TaskService } from '../services/task.service';
 import TaskListModel from '../models/taskListModel';
@@ -12,11 +13,14 @@ import TaskListModel from '../models/taskListModel';
     CommonModule,
     RouterLink,
     RouterOutlet,
+    TranslateModule,
   ],
   templateUrl: './new-task-list-screen.component.html',
   styleUrl: './new-task-list-screen.component.scss'
 })
 export class NewTaskListScreenComponent implements OnInit {
+
+  lang: string = '';
 
   constructor(
     private router: Router,
@@ -24,7 +28,7 @@ export class NewTaskListScreenComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.lang = localStorage.getItem('lang') || 'en';
   }
 
   addNewTaskList(title: string) {
@@ -36,7 +40,13 @@ export class NewTaskListScreenComponent implements OnInit {
           }
         );
     } else {
-      alert('Title cannot be empty');
+      if (this.lang == 'en') {
+        alert('Title cannot be empty');
+      } else if (this.lang == 'de') {
+        alert('Der Titel darf nicht leer sein');
+      } else {
+        alert('Naslov ne može biti prazan');
+      }
       return;
     }
   }

@@ -1,24 +1,24 @@
 <div class="container text-center mt-5">
-    <div class="row">
-        <div class="col">
-            <div class="mb-3">
-                <label for="taskList" class="form-label">
-                    <h3>
-                        Add new Task List Title
-                    </h3>
-                </label>
-                <input #taskListInput type="text" class="form-control" id="taskList" placeholder="Enter Title">
-            </div>
-        </div>
+  <div class="row">
+    <div class="col">
+      <div class="mb-3">
+        <label for="taskList" class="form-label">
+          <h3>
+            {{'Add new Task List Title'|translate}}
+          </h3>
+        </label>
+        <input #taskListInput type="text" class="form-control" id="taskList" placeholder="{{'Enter Title'|translate}}">
+      </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <button [routerLink]="['/']" type="button" class="btn btn-secondary m-1">
-                Cancel
-            </button>
-            <button (click)="addNewTaskList(taskListInput.value)" type="button" class="btn btn-primary m-1">
-                Add New Task List
-            </button>
-        </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button [routerLink]="['/']" type="button" class="btn btn-secondary m-1">
+        {{'Cancel'|translate}}
+      </button>
+      <button (click)="addNewTaskList(taskListInput.value)" type="button" class="btn btn-primary m-1">
+        {{'Add New Task List'|translate}}
+      </button>
     </div>
+  </div>
 </div>
