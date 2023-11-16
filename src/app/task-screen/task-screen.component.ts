@@ -75,7 +75,8 @@ export class TaskScreenComponent implements OnInit {
       .subscribe(() => {
         this.taskLists = this.taskLists.filter(
           tskLst => tskLst._id != taskListClicked._id
-        )
+        );
+        this.router.navigate(['/task-lists']);
       });
   }
 

@@ -21,6 +21,8 @@ export class NewTaskScreenComponent implements OnInit {
 
   taskListId: string = '';
 
+  lang: string = '';
+
   constructor(
     private taskService: TaskService,
     private activatedRoute: ActivatedRoute,
@@ -32,13 +34,24 @@ export class NewTaskScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.lang = localStorage.getItem('lang') || 'en';
   }
 
   addNewTask(title: string) {
-    this.taskService.createATaskForATaskList(this.taskListId, title)
-      .subscribe(
-        () => this.router.navigate(['../'], { relativeTo: this.activatedRoute })
-      );
+    if (title) {
+      this.taskService.createATaskForATaskList(this.taskListId, title)
+        .subscribe(
+          () => this.router.navigate(['../'], { relativeTo: this.activatedRoute })
+        );
+    } else {
+      if (this.lang == 'en') {
+        alert('Title cannot be empty');
+      } else if (this.lang == 'de') {
+        alert('Der Titel darf nicht leer sein');
+      } else {
+        alert('Naslov ne može biti prazan');
+      }
+      return;
+    }
   }
 }
