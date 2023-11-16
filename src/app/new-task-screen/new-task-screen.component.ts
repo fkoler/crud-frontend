@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Params, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { TaskService } from '../services/task.service';
 
@@ -11,6 +12,7 @@ import { TaskService } from '../services/task.service';
     CommonModule,
     RouterLink,
     RouterOutlet,
+    TranslateModule,
   ],
   templateUrl: './new-task-screen.component.html',
   styleUrl: './new-task-screen.component.scss'

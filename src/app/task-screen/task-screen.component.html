@@ -5,15 +5,15 @@
     <div class="col-lg-8 col-sm-10">
       <h2 class="bg-secondary p-3 text-center fw-bold m-0 rounded">
         <span [routerLink]="['/']" style="cursor: pointer;">
-          Task Manager App
+          {{'Task Manager App'|translate}}
         </span>
       </h2>
     </div>
     <div class="col-lg-2 col-sm-12 d-flex justify-content-center align-items-center py-4">
-      <select name="language" id="language">
-        <option value="en">English</option>
-        <option value="de">Deutsch</option>
-        <option value="rs">Srpski</option>
+      <select name="language" id="language" (change)="changeLang($event)">
+        <option value="en" [selected]="lang=='en'">English</option>
+        <option value="de" [selected]="lang=='de'">Deutsch</option>
+        <option value="rs" [selected]="lang=='rs'">Srpski</option>
       </select>
     </div>
     <div class="col-1"></div>
@@ -25,12 +25,12 @@
       <div class="row position-relative">
         <div class="col-6">
           <h3 class="float-start m-0 pt-1">
-            Lists
+            {{'Lists'|translate}}
           </h3>
         </div>
         <div class="col-6">
           <button [routerLink]="['/new-task-list']" type="button" class="btn btn-primary float-end">
-            New List
+            {{'New List'| translate}}
           </button>
         </div>
       </div>
@@ -55,12 +55,12 @@
       <div class="row">
         <div class="col-6">
           <h3 class="float-start m-0 pt-1">
-            Tasks
+            {{'Tasks'|translate}}
           </h3>
         </div>
         <div class="col-6">
           <button (click)="addNewTask()" type="button" class="btn btn-primary float-end">
-            New Task
+            {{'New Task'|translate}}
           </button>
         </div>
       </div>
